@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cards {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .cards::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #ffce00;
+    transform: skewY(350deg);
+    transition: 0.5s;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .cards:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
   }
-}
+  
+  .cards::after {
+    content: "CORSAIR";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .cards .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+  }
+
+  .cards .imgBox img {
+      max-width: 50%;
+      max-height: 50%;
+      transition: .5s;
+  }
+  
+  .cards:hover .imgBox img {
+      max-width: 50%;
+        
+  }
+
+  .cards .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+  }
+  
+  .cards .contentBox h3 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .cards .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .cards .contentBox .buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: #ffce00;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+  }
+  
+  .cards:hover .contentBox .buy {
+    top: 0;
+    opacity: 1;
+  }
+  
+  .mouse {
+    height: 300px;
+    width: auto;
+  }
+
+  .product-details {
+    padding: 20px;
+  }
+  
+  .product-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .product-details h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .product-details button {
+    margin-top: 15px;
+  }
+  
+  
